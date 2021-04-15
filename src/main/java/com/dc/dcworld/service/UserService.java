@@ -12,7 +12,12 @@ import java.util.List;
 
 public interface UserService {
 
+    
     List<User> getAll();
 
     DcHttp<User> save(User user);
+
+    DcHttp<User> login(User user);
+
+    User findByUserName(String username);
 }

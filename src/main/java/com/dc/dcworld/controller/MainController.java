@@ -3,6 +3,7 @@ package com.dc.dcworld.controller;
 import com.dc.dcworld.domain.User;
 import com.dc.dcworld.service.UserService;
 import com.dc.dcworld.utils.http.DcHttp;
+import com.dc.dcworld.utils.http.ResultCode;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,42 +23,27 @@ public class MainController {
     @Autowired
     private  UserService userService;
 
+
     /**
-     * 测试
-     * @return
+     * 登录
+     * @param user form体
+     * @return 成功或失败状态
      */
-    @GetMapping("/user/login")
-    public List<String> login(){
-        List<String> demoList = new ArrayList<>();
-        demoList.add("success");
-        return demoList;
+    @RequestMapping("login")
+    public DcHttp<User> login(@RequestBody User user){
+        return userService.login(user);
     }
 
     /**
      * 注册
-     * @return
+     * @return null
      */
     @GetMapping("/register")
-    @ResponseBody
     public DcHttp<User> register(@RequestBody User user){
+        User newUser=userService.findByUserName(user.getUsername());
+        if(newUser!=null){
+            return DcHttp.failed(ResultCode.USER_HAS_EXISTED.getMessage());
+        }
         return userService.save(user);
-    }
-
-    @RequestMapping("/hello")
-    public void hello(){
-        System.out.println("hello world");
-    }
-
-    @GetMapping("/user/userList")
-    @ResponseBody
-    public List<User> getUserList(){
-        return userService.getAll();
-    }
-
-    @GetMapping("/page")
-    @ResponseBody
-    public PageInfo<User> getUserL(){
-        List<User> userList=userService.getAll();
-        return new PageInfo<>(userList);
     }
 }
