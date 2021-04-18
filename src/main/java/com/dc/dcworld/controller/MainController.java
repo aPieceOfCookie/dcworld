@@ -35,21 +35,21 @@ public class MainController {
      * @param user form体
      * @return 成功或失败状态
      */
-    @RequestMapping("login")
+    @PostMapping("/login")
     public DcHttp<User> login(@RequestBody User user){
-        Map<String, String> userMap = new HashMap<>();
-        userMap.put("username",user.getUsername());
-        userMap.put("password",user.getPassword());
-        String token=JwtUtil.createToken(userMap);
-        DcHttp<User> dcHttp=userService.login(user);
-        return null;
+//        Map<String, String> userMap = new HashMap<>();
+//        userMap.put("username",user.getUsername());
+//        userMap.put("password",user.getPassword());
+//        String token=JwtUtil.createToken(userMap);
+//        DcHttp<User> dcHttp=userService.login(user);
+        return userService.login(user);
     }
 
     /**
      * 注册
      * @return null
      */
-    @GetMapping("/register")
+    @PostMapping("/register")
     public DcHttp<User> register(@RequestBody User user){
         User newUser=userService.findByUserName(user.getUsername());
         if(newUser!=null){

@@ -20,7 +20,7 @@ public interface UserDao {
      * 保存
      * @param user 新用户
      */
-    @Insert("insert into user (fullname,username,passowrd) values(#{fullname},#{username}#{password})")
+    @Insert("insert into user (fullname,username,password) values(#{fullname},#{username},#{password})")
     void save(User user);
 
     /**
