@@ -11,7 +11,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.Collections;
 
 /**
- * @author Dell
+ * @author: 一块儿小饼干
+ * @ProjectName: dcworld
+ * @Description:  跨域配置
+ * @date: 2021/4/18 19:51
  */
 @Configuration
 public class CrosConfig /*implements WebMvcConfigurer */{

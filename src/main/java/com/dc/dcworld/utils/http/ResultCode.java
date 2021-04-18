@@ -4,7 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @author Dell
+ * @author: 一块儿小饼干
+ * @ProjectName: dcworld
+ * @Description:  状态码
+ * @date: 2021/4/18 19:51
  */
 @Getter
 public enum ResultCode{

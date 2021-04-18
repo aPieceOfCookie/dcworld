@@ -3,8 +3,10 @@ package com.dc.dcworld.utils.http;
 import lombok.Data;
 
 /**
- * 一个统一的结果封装工具栏里
- * @author Dell
+ * @author: 一块儿小饼干
+ * @ProjectName: dcworld
+ * @Description:  http结果封装工具类
+ * @date: 2021/4/18 19:51
  */
 @Data
 public class DcHttp<T> {
