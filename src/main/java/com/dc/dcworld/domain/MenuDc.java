@@ -3,6 +3,7 @@ package com.dc.dcworld.domain;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author: 一块儿小饼干
@@ -20,4 +21,12 @@ public class MenuDc {
     private String create;
     private Long createId;
     private Date createDate;
+    private String iconImg;
+    /**
+     * 路由
+     */
+    private String route;
+    private Long childId;
+    private Integer sn;
+    private List<MenuDc> childList;
 }

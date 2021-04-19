@@ -1,6 +1,7 @@
 package com.dc.dcworld.service;
 
 import com.dc.dcworld.domain.MenuDc;
+import com.dc.dcworld.utils.http.DcHttp;
 
 import java.util.List;
 
@@ -15,5 +16,5 @@ public interface MenuDcService {
      * 获得所有菜单列表
      * @return
      */
-    List<MenuDc> getAll();
+    DcHttp<List<MenuDc>> getAll();
 }

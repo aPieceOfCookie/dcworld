@@ -5,10 +5,13 @@ import com.dc.dcworld.domain.User;
 import com.dc.dcworld.service.UserService;
 import com.dc.dcworld.utils.http.DcHttp;
 import com.dc.dcworld.utils.http.ResultCode;
+import com.dc.dcworld.utils.jwt.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author: 一块儿小饼干
@@ -34,11 +37,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public DcHttp<User> login(User user) {
+    public DcHttp<String> login(User user) {
         User oldUser=dao.findByUserName(user.getUsername());
         if(user.getPassword()!=null&&oldUser.getPassword()!=null){
             if(user.getPassword().equals(oldUser.getPassword())){
-                return DcHttp.success();
+                Map<String, Object> jwtMap = new HashMap<>();
+                jwtMap.put("userId",oldUser.getUserId());
+                return DcHttp.success(JwtUtil.createToken(jwtMap));
             }else{
                 return DcHttp.failed("帐号或密码错误");
             }

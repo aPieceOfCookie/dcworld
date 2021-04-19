@@ -19,7 +19,7 @@ public interface UserService {
 
     DcHttp<User> save(User user);
 
-    DcHttp<User> login(User user);
+    DcHttp<String> login(User user);
 
     User findByUserName(String username);
 }

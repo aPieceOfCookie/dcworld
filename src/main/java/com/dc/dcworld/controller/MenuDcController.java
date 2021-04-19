@@ -26,7 +26,6 @@ public class MenuDcController {
 
     @GetMapping("/getMenuList")
     public DcHttp<List<MenuDc>> getMenuList(){
-        List<MenuDc> menuList = menuDcService.getAll();
-        return DcHttp.success(menuList);
+        return menuDcService.getAll();
     }
 }

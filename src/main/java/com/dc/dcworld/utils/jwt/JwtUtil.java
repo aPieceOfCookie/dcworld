@@ -1,4 +1,4 @@
-package com.dc.dcworld.utils;
+package com.dc.dcworld.utils.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTCreator;
@@ -26,13 +26,13 @@ public class JwtUtil {
      * @param map
      * @return
      */
-    public static String createToken(Map<String,String> map){
+    public static String createToken(Map<String,Object> map){
         Calendar calendar=Calendar.getInstance();
         //默认一天过期
         calendar.add(Calendar.HOUR,24);
         JWTCreator.Builder builder = JWT.create();
         map.forEach((k,v)->{
-            builder.withClaim(k,v);
+            builder.withClaim(k,v.toString());
         });
         return builder.withExpiresAt(calendar.getTime()).sign(Algorithm.HMAC256(TOKEN));
     }
@@ -63,7 +63,7 @@ public class JwtUtil {
      * @param args
      */
     public static void main(String[] args) {
-        Map<String, String> testMap = new HashMap<>();
+        Map<String, Object> testMap = new HashMap<>();
         testMap.put("userId","12");
         testMap.put("username","helloworld");
         String token=JwtUtil.createToken(testMap);
