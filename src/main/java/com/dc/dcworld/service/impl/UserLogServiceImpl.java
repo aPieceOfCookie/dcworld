@@ -6,6 +6,8 @@ import com.dc.dcworld.service.UserLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author: 一块儿小饼干
  * @ProjectName: dcworld
@@ -19,5 +21,10 @@ public class UserLogServiceImpl implements UserLogService {
     @Override
     public void save(UserLog log) {
         dao.save(log);
+    }
+
+    @Override
+    public List<UserLog> getAll() {
+        return dao.getAll();
     }
 }
