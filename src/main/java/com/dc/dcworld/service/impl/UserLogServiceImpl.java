@@ -27,4 +27,9 @@ public class UserLogServiceImpl implements UserLogService {
     public List<UserLog> getAll() {
         return dao.getAll();
     }
+
+    @Override
+    public void remove(Long logId) {
+        dao.remove(logId);
+    }
 }

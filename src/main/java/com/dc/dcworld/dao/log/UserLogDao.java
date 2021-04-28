@@ -1,6 +1,7 @@
 package com.dc.dcworld.dao.log;
 
 import com.dc.dcworld.domain.log.UserLog;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -29,4 +30,11 @@ public interface UserLogDao {
      */
     @Select("select * from user_log")
     List<UserLog> getAll();
+
+    /**
+     * 删除日志信息
+     * @param logId
+     */
+    @Delete("delete from user_log where log_id=#{logId}")
+    void remove(Long logId);
 }

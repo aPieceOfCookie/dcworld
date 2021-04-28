@@ -3,10 +3,11 @@ package com.dc.dcworld.controller;
 import com.dc.dcworld.domain.log.UserLog;
 import com.dc.dcworld.service.UserLogService;
 import com.dc.dcworld.utils.http.DcHttp;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -29,5 +30,12 @@ public class UserLogController {
     public DcHttp<List<UserLog>> getAll(){
         List<UserLog> userLogList=userLogService.getAll();
         return DcHttp.success(userLogList);
+    }
+
+    @DeleteMapping("/delOne")
+    public DcHttp delUserLog(@PathVariable("logId") Long logId){
+        System.out.println(logId);
+        //userLogService.remove(logId);
+        return DcHttp.success();
     }
 }

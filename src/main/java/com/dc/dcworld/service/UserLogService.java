@@ -22,4 +22,10 @@ public interface UserLogService {
      * @return
      */
     List<UserLog> getAll();
+
+    /**
+     * 删除日志信息
+     * @param logId
+     */
+    void remove(Long logId);
 }
