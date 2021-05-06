@@ -1,4 +1,4 @@
-package com.dc.dcworld.domain;
+package com.dc.dcworld.mapper.base;
 
 import lombok.Data;
 import lombok.ToString;

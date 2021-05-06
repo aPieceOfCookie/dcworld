@@ -1,9 +1,8 @@
-package com.dc.dcworld.service.impl;
+package com.dc.dcworld.service.base.impl;
 
-import com.alibaba.fastjson.JSONObject;
-import com.dc.dcworld.dao.UserDao;
-import com.dc.dcworld.domain.User;
-import com.dc.dcworld.service.UserService;
+import com.dc.dcworld.dao.base.UserDao;
+import com.dc.dcworld.mapper.base.User;
+import com.dc.dcworld.service.base.UserService;
 import com.dc.dcworld.utils.http.DcHttp;
 import com.dc.dcworld.utils.http.ResultCode;
 import com.dc.dcworld.utils.jwt.JwtUtil;

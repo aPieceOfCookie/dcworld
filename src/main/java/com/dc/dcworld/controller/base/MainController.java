@@ -1,15 +1,14 @@
-package com.dc.dcworld.controller;
+package com.dc.dcworld.controller.base;
 
-import com.dc.dcworld.domain.User;
-import com.dc.dcworld.domain.log.UserLog;
-import com.dc.dcworld.service.UserLogService;
-import com.dc.dcworld.service.UserService;
+import com.dc.dcworld.mapper.base.User;
+import com.dc.dcworld.mapper.log.UserLog;
+import com.dc.dcworld.service.log.UserLogService;
+import com.dc.dcworld.service.base.UserService;
 import com.dc.dcworld.utils.ip.IpUtil;
 import com.dc.dcworld.utils.jwt.JwtUtil;
 import com.dc.dcworld.utils.http.DcHttp;
 import com.dc.dcworld.utils.http.ResultCode;
 import com.dc.dcworld.utils.log.IpLogUtil;
-import org.apache.http.HttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

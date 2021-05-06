@@ -1,6 +1,6 @@
-package com.dc.dcworld.service;
+package com.dc.dcworld.service.log;
 
-import com.dc.dcworld.domain.log.UserLog;
+import com.dc.dcworld.mapper.log.UserLog;
 
 import java.util.List;
 

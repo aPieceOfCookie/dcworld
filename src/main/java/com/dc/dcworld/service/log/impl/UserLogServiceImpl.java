@@ -1,8 +1,7 @@
-package com.dc.dcworld.service.impl;
+package com.dc.dcworld.service.log.impl;
 
-import com.dc.dcworld.dao.log.UserLogDao;
-import com.dc.dcworld.domain.log.UserLog;
-import com.dc.dcworld.service.UserLogService;
+import com.dc.dcworld.mapper.log.UserLog;
+import com.dc.dcworld.service.log.UserLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

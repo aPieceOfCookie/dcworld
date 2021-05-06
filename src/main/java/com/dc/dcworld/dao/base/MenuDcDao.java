@@ -1,6 +1,6 @@
-package com.dc.dcworld.dao;
+package com.dc.dcworld.dao.base;
 
-import com.dc.dcworld.domain.MenuDc;
+import com.dc.dcworld.mapper.base.MenuDc;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

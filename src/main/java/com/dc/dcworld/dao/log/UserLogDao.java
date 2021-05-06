@@ -1,6 +1,6 @@
 package com.dc.dcworld.dao.log;
 
-import com.dc.dcworld.domain.log.UserLog;
+import com.dc.dcworld.mapper.log.UserLog;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;

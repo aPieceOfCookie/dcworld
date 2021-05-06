@@ -1,10 +1,9 @@
-package com.dc.dcworld.dao;
+package com.dc.dcworld.dao.base;
 
-import com.dc.dcworld.domain.User;
+import com.dc.dcworld.mapper.base.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

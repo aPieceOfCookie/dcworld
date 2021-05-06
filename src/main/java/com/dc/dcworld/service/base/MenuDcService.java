@@ -1,6 +1,6 @@
-package com.dc.dcworld.service;
+package com.dc.dcworld.service.base;
 
-import com.dc.dcworld.domain.MenuDc;
+import com.dc.dcworld.mapper.base.MenuDc;
 import com.dc.dcworld.utils.http.DcHttp;
 
 import java.util.List;

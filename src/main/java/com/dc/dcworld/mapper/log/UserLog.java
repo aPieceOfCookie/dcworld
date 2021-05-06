@@ -1,4 +1,4 @@
-package com.dc.dcworld.domain.log;
+package com.dc.dcworld.mapper.log;
 
 import lombok.Data;
 

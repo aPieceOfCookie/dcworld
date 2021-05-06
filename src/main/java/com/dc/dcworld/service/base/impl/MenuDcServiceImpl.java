@@ -1,16 +1,14 @@
-package com.dc.dcworld.service.impl;
+package com.dc.dcworld.service.base.impl;
 
-import com.dc.dcworld.dao.MenuDcDao;
-import com.dc.dcworld.domain.MenuDc;
-import com.dc.dcworld.service.MenuDcService;
+import com.dc.dcworld.dao.base.MenuDcDao;
+import com.dc.dcworld.mapper.base.MenuDc;
+import com.dc.dcworld.service.base.MenuDcService;
 import com.dc.dcworld.utils.http.DcHttp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author: 一块儿小饼干

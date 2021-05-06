@@ -1,12 +1,10 @@
-package com.dc.dcworld.controller;
+package com.dc.dcworld.controller.base;
 
-import com.dc.dcworld.domain.MenuDc;
-import com.dc.dcworld.service.MenuDcService;
+import com.dc.dcworld.mapper.base.MenuDc;
+import com.dc.dcworld.service.base.MenuDcService;
 import com.dc.dcworld.utils.http.DcHttp;
-import com.dc.dcworld.utils.http.ResultCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -1,13 +1,11 @@
-package com.dc.dcworld.controller;
+package com.dc.dcworld.controller.log;
 
-import com.dc.dcworld.domain.log.UserLog;
-import com.dc.dcworld.service.UserLogService;
+import com.dc.dcworld.mapper.log.UserLog;
+import com.dc.dcworld.service.log.UserLogService;
 import com.dc.dcworld.utils.http.DcHttp;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
