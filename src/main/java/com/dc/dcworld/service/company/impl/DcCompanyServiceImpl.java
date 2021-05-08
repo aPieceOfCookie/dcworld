@@ -27,4 +27,9 @@ public class DcCompanyServiceImpl implements DcCompanyService {
     public void save(DcCompany company) {
         dao.save(company);
     }
+
+    @Override
+    public void remove(Long companyId) {
+        dao.remove(companyId);
+    }
 }

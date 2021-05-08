@@ -30,9 +30,15 @@ public class DcCompanyController {
 
     @PostMapping("/saveCompany")
     public DcHttp<Void> saveCompany(@RequestBody DcCompany company){
-        company.setCreateName("张三");
+        company.setCreater("张三");
         company.setCreateTime(new Date());
         dcCompanyService.save(company);
+        return DcHttp.success();
+    }
+
+    @DeleteMapping("/removeCompany")
+    public DcHttp<Void> removeCompany(@PathVariable("companyId") Long companyId){
+        dcCompanyService.remove(companyId);
         return DcHttp.success();
     }
 }

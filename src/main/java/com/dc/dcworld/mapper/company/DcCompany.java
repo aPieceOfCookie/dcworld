@@ -18,6 +18,6 @@ public class DcCompany {
     private String companyName;
     private String address;
     private Long createId;
-    private String createName;
+    private String creater;
     private Date createTime;
 }

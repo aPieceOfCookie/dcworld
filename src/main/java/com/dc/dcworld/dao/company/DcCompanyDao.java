@@ -30,8 +30,8 @@ public interface DcCompanyDao {
      * @param company
      * @return
      */
-    @Insert("insert into dc_company values(#{companyName},#{address},#{createId},#{create},#{createTime})")
-    public DcCompany save(DcCompany company);
+    @Insert("insert into dc_company(company_name , address , creater , create_time ) values (#{companyName},#{address},#{creater},#{createTime})")
+    public void save(DcCompany company);
 
     /**
      * 获取一个公司信息
