@@ -1,5 +1,7 @@
 package com.dc.dcworld.service.base.impl;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.dc.dcworld.dao.base.UserDao;
 import com.dc.dcworld.mapper.base.User;
 import com.dc.dcworld.service.base.UserService;
@@ -45,7 +47,9 @@ public class UserServiceImpl implements UserService {
                 jwtMap.put("userId",oldUser.getUserId());
                 Map<String,String> tokenMap=new HashMap<>();
                 tokenMap.put("token",JwtUtil.createToken(jwtMap));
-                return DcHttp.success(tokenMap.toString());
+                String json=JSON.toJSONString(tokenMap);
+                System.out.println(json);
+                return DcHttp.success(json);
             }else{
                 return DcHttp.failed("帐号或密码错误");
             }

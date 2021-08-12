@@ -36,7 +36,7 @@ public class DcCompanyController {
         return DcHttp.success();
     }
 
-    @DeleteMapping("/removeCompany")
+    @DeleteMapping("/removeCompany/{companyId}")
     public DcHttp<Void> removeCompany(@PathVariable("companyId") Long companyId){
         dcCompanyService.remove(companyId);
         return DcHttp.success();

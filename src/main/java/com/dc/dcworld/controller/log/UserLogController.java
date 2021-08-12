@@ -30,10 +30,9 @@ public class UserLogController {
         return DcHttp.success(userLogList);
     }
 
-    @DeleteMapping("/delOne")
+    @DeleteMapping("/delOne/{logId}")
     public DcHttp delUserLog(@PathVariable("logId") Long logId){
-        System.out.println(logId);
-        //userLogService.remove(logId);
+        userLogService.remove(logId);
         return DcHttp.success();
     }
 }
