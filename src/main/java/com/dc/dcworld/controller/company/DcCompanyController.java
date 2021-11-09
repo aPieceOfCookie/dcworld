@@ -4,9 +4,12 @@ import com.dc.dcworld.mapper.company.DcCompany;
 import com.dc.dcworld.service.company.DcCompanyService;
 import com.dc.dcworld.utils.http.DcHttp;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -23,7 +26,7 @@ public class DcCompanyController {
     private DcCompanyService dcCompanyService;
 
     @GetMapping("/getAll")
-    public DcHttp<List<DcCompany>> getAll(){
+    public DcHttp<List<DcCompany>>  getAll(){
         List<DcCompany> companyList = dcCompanyService.getAll();
         return DcHttp.success(companyList);
     }

@@ -1,11 +1,10 @@
 package com.dc.dcworld.dao.base;
 
 import com.dc.dcworld.mapper.base.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author: 一块儿小饼干
@@ -38,5 +37,10 @@ public interface UserDao {
     User queryByUserId(int id);
 
     @Select("select * from user where username=#{username}")
+    @ResultType(User.class)
     User findByUserName(String username);
+
+    @Select("select * from user")
+    @MapKey("userId")
+    Map<Long,User> getUserMap();
 }

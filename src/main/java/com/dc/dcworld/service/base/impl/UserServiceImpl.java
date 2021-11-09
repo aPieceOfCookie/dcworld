@@ -62,4 +62,9 @@ public class UserServiceImpl implements UserService {
     public User findByUserName(String username) {
         return dao.findByUserName(username);
     }
+
+    @Override
+    public Map<Long, User> obtainUserMap() {
+        return dao.getUserMap();
+    }
 }

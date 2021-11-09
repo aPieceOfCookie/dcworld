@@ -6,6 +6,7 @@ import com.dc.dcworld.mapper.base.User;
 import com.dc.dcworld.utils.http.DcHttp;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author: 一块儿小饼干
@@ -23,4 +24,6 @@ public interface UserService {
     DcHttp<String> login(User user);
 
     User findByUserName(String username);
+
+    Map<Long, User> obtainUserMap();
 }

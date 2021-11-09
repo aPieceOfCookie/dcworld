@@ -46,4 +46,5 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis:
   configuration:
+    # 开启驼峰命名
     map-underscore-to-camel-case: true

@@ -1,5 +1,7 @@
 package com.dc.dcworld.mapper.company;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -19,5 +21,6 @@ public class DcCompany {
     private String address;
     private Long createId;
     private String creater;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date createTime;
 }
