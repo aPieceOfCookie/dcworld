@@ -3,9 +3,9 @@ package com.dc.dcworld.controller.log;
 import com.dc.dcworld.mapper.log.UserLog;
 import com.dc.dcworld.service.log.UserLogService;
 import com.dc.dcworld.utils.http.DcHttp;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -17,12 +17,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/userLog")
 public class UserLogController {
-    @Autowired
+    @Resource
     private UserLogService userLogService;
 
     /**
      * 获取所有登录日志信息
-     * @return
+     * @return 结果
      */
     @RequestMapping("/getAll")
     public DcHttp<List<UserLog>> getAll(){
@@ -30,8 +30,8 @@ public class UserLogController {
         return DcHttp.success(userLogList);
     }
 
-    @DeleteMapping("/delOne/{logId}")
-    public DcHttp delUserLog(@PathVariable("logId") Long logId){
+    @DeleteMapping("/delOne")
+    public DcHttp<Void> delUserLog(Long logId){
         userLogService.remove(logId);
         return DcHttp.success();
     }

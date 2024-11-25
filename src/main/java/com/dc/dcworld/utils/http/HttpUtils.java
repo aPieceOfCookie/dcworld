@@ -1,5 +1,8 @@
 package com.dc.dcworld.utils.http;
 
+
+import com.alibaba.druid.util.StringUtils;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,18 +28,21 @@ public class HttpUtils {
     public static String sendPost(String urlStr,String method){
         StringBuilder buffer = new StringBuilder();
         buffer.append(urlStr);
-        BufferedReader buffer1 = null;
-        StringBuilder resultBuffer=null;
+        BufferedReader buffer1;
+        StringBuilder resultBuffer;
 
-        HttpURLConnection connection=null;
+        HttpURLConnection connection;
         try {
             URL url=new URL(buffer.toString());
+
             connection=(HttpURLConnection) url.openConnection();
             connection.setRequestMethod(method);
             connection.setDoOutput(true);
             connection.setDoInput(true);
             connection.setUseCaches(false);
             connection.setRequestProperty("content-type",CONTENT_TYPE);
+            // 设置cookie
+            connection.setRequestProperty("cookie", "");
             //connection.connect();
             //得到响应码
             int responseCode = connection.getResponseCode();
@@ -58,5 +64,4 @@ public class HttpUtils {
 
         return "";
     }
-
 }

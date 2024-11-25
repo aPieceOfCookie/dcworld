@@ -1,7 +1,6 @@
 package com.dc.dcworld.utils.qqMap;
 
 import com.dc.dcworld.utils.http.HttpUtils;
-import okhttp3.OkHttp;
 import okhttp3.OkHttpClient;
 
 /**

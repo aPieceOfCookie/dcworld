@@ -3,13 +3,9 @@ package com.dc.dcworld.controller.company;
 import com.dc.dcworld.mapper.company.DcCompany;
 import com.dc.dcworld.service.company.DcCompanyService;
 import com.dc.dcworld.utils.http.DcHttp;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
@@ -22,7 +18,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/company")
 public class DcCompanyController {
-    @Autowired
+    /**
+     * 注入
+     */
+    @Resource
     private DcCompanyService dcCompanyService;
 
     @GetMapping("/getAll")

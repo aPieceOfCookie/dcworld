@@ -1,7 +1,5 @@
 package com.dc.dcworld.controller.base;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.dc.dcworld.mapper.base.User;
 import com.dc.dcworld.mapper.log.UserLog;
 import com.dc.dcworld.service.log.UserLogService;
@@ -11,14 +9,11 @@ import com.dc.dcworld.utils.jwt.JwtUtil;
 import com.dc.dcworld.utils.http.DcHttp;
 import com.dc.dcworld.utils.http.ResultCode;
 import com.dc.dcworld.utils.log.IpLogUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.Map;
 
 /**
@@ -31,10 +26,8 @@ import java.util.Map;
 @RequestMapping("/admin")
 public class MainController {
 
-    @Autowired
+    @Resource
     private  UserService userService;
-    @Autowired
-    private UserLogService userLogService;
 
     /**
      * 登录
@@ -43,21 +36,7 @@ public class MainController {
      */
     @PostMapping("/login")
     public DcHttp<String> login(@RequestBody User user, HttpServletRequest request){
-        //重新开辟线程
-        new Thread(()->{
-            String ip=IpUtil.getIpAdrress(request);
-            String baseIp=request.getHeader("x-forwarded-for");
-            if("127.0.0.1".equals(baseIp)){
-                UserLog log=new UserLog();
-                log.setIp("127.0.0.1");
-                log.setLoginTime(new Date());
-                log.setAddress("");
-                userLogService.save(log);
-            }else{
-                String address=IpLogUtil.getCityInfo(ip);
-            }
-        });
-        return userService.login(user);
+        return userService.login(user, request);
     }
 
     /**
@@ -74,7 +53,7 @@ public class MainController {
     }
 
     @PostMapping("/test")
-    public DcHttp<User> test(String token){
+    public DcHttp<User> test(@RequestParam(name = "token",required = true) String token){
         try {
             JwtUtil.verifyToken(token);
         } catch (Exception e) {

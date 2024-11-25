@@ -1,6 +1,7 @@
 package com.dc.dcworld.mapper.log;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -15,5 +16,5 @@ public class UserLog {
     private Long logId;
     private String address;
     private String ip;
-    private Date loginTime;
+    private String loginTime;
 }

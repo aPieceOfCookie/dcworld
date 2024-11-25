@@ -1,10 +1,11 @@
 package com.dc.dcworld.service.log.impl;
 
+import com.dc.dcworld.dao.log.UserLogDao;
 import com.dc.dcworld.mapper.log.UserLog;
 import com.dc.dcworld.service.log.UserLogService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -15,8 +16,10 @@ import java.util.List;
  */
 @Service
 public class UserLogServiceImpl implements UserLogService {
-    @Autowired
-    private com.dc.dcworld.dao.log.UserLogDao dao;
+
+    @Resource
+    private UserLogDao dao;
+
     @Override
     public void save(UserLog log) {
         dao.save(log);

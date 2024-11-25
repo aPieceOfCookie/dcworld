@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.dc.dcworld.mapper.base.User;
 import com.dc.dcworld.utils.http.DcHttp;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +22,7 @@ public interface UserService {
 
     DcHttp<User> save(User user);
 
-    DcHttp<String> login(User user);
+    DcHttp<String> login(User user, HttpServletRequest request);
 
     User findByUserName(String username);
 

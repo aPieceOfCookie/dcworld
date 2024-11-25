@@ -19,10 +19,10 @@ public interface UserLogDao {
 
     /**
      * 保存登录日志
-     * @param log
+     * @param log 日志新消息
      */
     @Insert("insert into user_log(address,ip,login_time) values (#{address},#{ip},#{loginTime})")
-    public void save(UserLog log);
+    void save(UserLog log);
 
     /**
      * 获取所有登录信息
