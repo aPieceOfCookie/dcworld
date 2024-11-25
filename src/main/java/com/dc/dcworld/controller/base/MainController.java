@@ -1,14 +1,10 @@
 package com.dc.dcworld.controller.base;
 
 import com.dc.dcworld.mapper.base.User;
-import com.dc.dcworld.mapper.log.UserLog;
-import com.dc.dcworld.service.log.UserLogService;
 import com.dc.dcworld.service.base.UserService;
-import com.dc.dcworld.utils.ip.IpUtil;
 import com.dc.dcworld.utils.jwt.JwtUtil;
 import com.dc.dcworld.utils.http.DcHttp;
 import com.dc.dcworld.utils.http.ResultCode;
-import com.dc.dcworld.utils.log.IpLogUtil;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -53,7 +49,7 @@ public class MainController {
     }
 
     @PostMapping("/test")
-    public DcHttp<User> test(@RequestParam(name = "token",required = true) String token){
+    public DcHttp<User> test(@RequestParam(name = "token") String token){
         try {
             JwtUtil.verifyToken(token);
         } catch (Exception e) {

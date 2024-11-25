@@ -26,14 +26,14 @@ public interface UserLogDao {
 
     /**
      * 获取所有登录信息
-     * @return
+     * @return list
      */
     @Select("select * from user_log")
     List<UserLog> getAll();
 
     /**
      * 删除日志信息
-     * @param logId
+     * @param logId logId
      */
     @Delete("delete from user_log where log_id=#{logId}")
     void remove(Long logId);

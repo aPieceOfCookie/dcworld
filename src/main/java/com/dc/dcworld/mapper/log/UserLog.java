@@ -1,9 +1,6 @@
 package com.dc.dcworld.mapper.log;
 
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.util.Date;
 
 /**
  * @author: 一块儿小饼干
